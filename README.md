@@ -21,7 +21,7 @@
 1. 任意の行で `:call copyline#CopyLine()` を実行して下さい
     + 任意のキーボード・ショートカットを割り当てると便利です
     + （例）Ctrl-] に設定する場合：
-      `nnoremap <silent> <C-]> :call copyline#CopyLine()`
+      `nnoremap <silent> <C-]> :call copyline#CopyLine()<enter>`
     + そのショートカットキーを押すと動作します
 1. 該当する行のうち
     **箇条書きのための記号や正答を示す記号を除いた部分**
