@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.1.1 (2023-12-22)
+- ignore header lines (start with #)
+
 ## 0.1.0 (2023-12-22)
 - enables continuous copying (using start/end tags)
 
