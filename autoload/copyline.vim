@@ -31,7 +31,7 @@ function! copyline#CopyLine() abort
         let result = substitute(text1, s:pat2, "", "")
 
         " copy result to clipboard
-        if result != ""
+        if result != "" && match(text, "^#") == -1
             echo "Copied [".result."]"
             let @+ = result
             sleep 1
