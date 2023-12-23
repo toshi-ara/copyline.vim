@@ -1,4 +1,10 @@
 # Change Log
+## 0.2.0 (2023-12-23)
+- revert original function
+- change function names
+    - copyline#CopyLineSingle
+    - copyline#CopyLineMulti
+- refactoring
 
 ## 0.1.1 (2023-12-22)
 - ignore header lines (start with #)
