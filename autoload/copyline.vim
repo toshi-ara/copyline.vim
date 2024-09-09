@@ -1,6 +1,6 @@
 scriptencoding utf-8
 
-let g:copyline_str_start = "(start)"
+let g:copyline_str_begin = "(begin)"
 let g:copyline_str_end = "(end)"
 
 
@@ -48,16 +48,16 @@ function! copyline#CopyLineMulti() abort
     call setpos(".", [0, pos[1], 0, 0])
 
     let flags = "cW"
-    let startLine = search(g:copyline_str_start, flags)
+    let beginLine = search(g:copyline_str_begin, flags)
     let endLine = search(g:copyline_str_end, flags)
 
-    if startLine == 0 || endLine == 0
-        echo "missing start or end tag"
+    if beginLine == 0 || endLine == 0
+        echo "missing begin or end tag"
         call setpos(".", pos)
         return
     endif
 
-    let texts = getline(startLine + 1, endLine - 1)
+    let texts = getline(beginLine + 1, endLine - 1)
     for text in texts
         let result = GetString(text)
         call CopyTextClipboard(result)
