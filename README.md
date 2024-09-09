@@ -24,13 +24,13 @@
        がクリップボードにコピーされます
     + コマンド実行後は次の行の先頭にカーソルが移動します
 1. 複数行のコピーを行う場合には
-   (start) タグのある行あるいはそれより前の行にカーソルを置いてから
+   (begin) タグのある行あるいはそれより前の行にカーソルを置いてから
     `:call copyline#CopyLineMulti()` を実行して下さい
-    +  (start) タグから (end) タグに挟まれた領域で
+    +  (begin) タグから (end) タグに挟まれた領域で
        **箇条書きのための記号や正答を示す記号を除いた部分**
        が連続的にクリップボードにコピーされます
     + コマンド実行後は (end) タグの次の行の先頭にカーソルが移動します
-    + (start) タグあるいは (end) タグが存在していない場合には
+    + (begin) タグあるいは (end) タグが存在していない場合には
       コピーされません
 1. 任意のキーボード・ショートカットを割り当てると便利です
     + （例）Ctrl-} および Ctrl-] に設定する場合：
@@ -42,7 +42,7 @@ nnoremap <silent> <C-]> :call copyline#CopyLineMulti()<enter>
 ## 使用例
 
 以下の例で、
-カーソルを (start) タグ以前の行に設定してから
+カーソルを (begin) タグ以前の行に設定してから
 `:call copyline#CopyLine()` を実行すると、
 `問題文`、`選択肢1`、`選択肢2` がクリップボードにコピーされます。
 
@@ -51,7 +51,7 @@ nnoremap <silent> <C-]> :call copyline#CopyLineMulti()<enter>
 `+`, `-`, `*` を使用できます。
 
 ```
-(start)
+(begin)
 + 問題文
     + 選択肢1 ##
     + 選択肢2
@@ -60,7 +60,7 @@ nnoremap <silent> <C-]> :call copyline#CopyLineMulti()<enter>
 ```
 
 ```
-(start)
+(begin)
 - 問題文
     - 選択肢1 ##
     - 選択肢2
@@ -68,7 +68,7 @@ nnoremap <silent> <C-]> :call copyline#CopyLineMulti()<enter>
 ```
 
 ```
-(start)
+(begin)
 * 問題文
     * 選択肢1 ##
     * 選択肢2
@@ -80,7 +80,7 @@ nnoremap <silent> <C-]> :call copyline#CopyLineMulti()<enter>
 英数字にピリオド、片括弧、両括弧（半角文字）を追加しても動作します。
 
 ```
-(start)
+(begin)
 1. 問題文
      a. 選択肢1 ##
      b. 選択肢2
@@ -88,7 +88,7 @@ nnoremap <silent> <C-]> :call copyline#CopyLineMulti()<enter>
 ```
 
 ```
-(start)
+(begin)
 1) 問題文
      a) 選択肢1 ##
      b) 選択肢2
@@ -96,7 +96,7 @@ nnoremap <silent> <C-]> :call copyline#CopyLineMulti()<enter>
 ```
 
 ```
-(start)
+(begin)
 (1) 問題文
     (a) 選択肢1 ##
     (b) 選択肢2
@@ -117,7 +117,7 @@ nnoremap <silent> <C-]> :call copyline#CopyLineMulti()<enter>
 + `○`および`×`は機種依存文字を使う場合があるため非推奨です
 
 ```
-(start)
+(begin)
 - 問題文
     - 選択肢1 ##
     - 選択肢2 ○
@@ -128,7 +128,7 @@ nnoremap <silent> <C-]> :call copyline#CopyLineMulti()<enter>
 ## #で始まるヘッダー行を無視
 
 ```
-(start)
+(begin)
 # 問題文（この行は無視される）
 + 問題文
     + 選択肢1
@@ -168,6 +168,9 @@ web の入力項目などに順番に貼り付けることが容易にできま�
 
 
 ## Release Notes
+### 0.2.1 (2024-9-9)
+- startタグをbeginタグに変更
+
 ### 0.2.0 (2023-12-23)
 - 1行だけ処理する関数を復帰させた
 - それに伴い関数名を変更した
@@ -179,7 +182,7 @@ web の入力項目などに順番に貼り付けることが容易にできま�
 `#`で始まるヘッダー行を無視するように変更した
 
 ### 0.1.0
-start/endタグを使用することで連続的にクリップボードに
+begin/endタグを使用することで連続的にクリップボードに
 コピーすることを可能にした（cliborの併用が必要）
 
 ### 0.0.1

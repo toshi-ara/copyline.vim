@@ -1,4 +1,7 @@
 # Change Log
+## 0.2.1 (2022-9-9)
+- change start tag to begin tag
+
 ## 0.2.0 (2023-12-23)
 - revert original function
 - change function names
